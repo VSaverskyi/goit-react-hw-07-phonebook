@@ -8,12 +8,13 @@ import { getContacts } from "redux/contacts/slice";
 
 const App = () => {
   const contacts = useSelector(getContacts);
+  console.log('contacts', contacts);
 
   return (
     <Container>
       <h1>Phonebook</h1>
       <ContactForm />
-      {contacts.length !== 0 && <ContactsWrapper>
+      {contacts.length > 0 && <ContactsWrapper>
         <h2>Contacts</h2>
         <Filter />
         <ContactList />
